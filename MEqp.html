@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <title>ME</title>
+    <style>
+        .note{
+       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+       font-size: 80px,bold;
+       color: rgb(3, 3, 3);
+       margin-top: 2%;
+       display: block;
+     
+       }
+       body{
+           background: url("bg5.jpg") no-repeat center center fixed; 
+           height: 100vh;
+           background-size: cover;
+       }
+       .btngrp .button {
+ background-color: #ff9c19c7;
+ border: 3px solid rgb(0, 0, 0);
+ border-radius: 20px;
+ color: black;
+ padding: 7px 15px;
+ text-align: center;
+ text-decoration: none;
+ cursor: pointer;
+ display: block;
+ font-size: 15px;
+ font-family:monospace ;
+ margin: 2px 3px;
+ transition: 0.5s; 
+ margin-top: 1%;
+ width: 70%;
+ 
+}   
+.btngrp .button:not(:last-child) {
+         border-bottom: none; /* Prevent double borders */
+       }
+.btngrp .button:hover {
+ background-color: #f3d0ac;
+ color: rgb(0, 0, 0);
+}
+.btngrp .button span {
+ cursor: pointer;
+ display: inline-block;
+ position: relative;
+ transition: 0.5s;
+}
+
+.btngrp .button span:after {
+ content: '\00bb';
+ position: absolute;
+ opacity: 0;
+ top: 0;
+ right: -20px;
+ transition: 0.5s;
+}
+
+.btngrp .button:hover span {
+ padding-right: 2px;
+}
+
+.btngrp .button:hover span:after {
+ opacity: 1;
+ right: 0;
+}
+.btngrp{
+   margin: auto;
+ width: 70%;
+ padding: 20px;
+
+
+}
+.note{
+  position: relative;
+  font-weight: 900;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.note .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.note .letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0
+}
+
+      </style>
+</head>
+<body>
+    <h1 class="note">
+        <span class="letters">Question Papers</span>
+         </span>
+       </h1>
+        <div class="btngrp" align="center" > 
+   
+            <button class="button" onclick="window.location.href = 'Uploading.html';"> JAN 2018 </button>
+            <button class="button" onclick="window.location.href = 'Uploading.html';">JULY 2018</button>
+            <button class="button" onclick="window.location.href = 'Uploading.html';">JAN 2019</button>
+    
+            </div>
+</body>
+<script>
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.note .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    
+    anime.timeline({loop: true})
+      .add({
+        targets: '.note .letter',
+        rotateY: [-90, 0],
+        duration: 1300,
+        delay: (el, i) => 45 * i
+      }).add({
+        targets: '.note',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 9000
+      });</script>
+</html>

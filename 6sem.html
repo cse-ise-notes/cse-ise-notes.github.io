@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <title>6th SEM</title>
+    <style>
+        body{
+            background: url("6sembg.jpg") ; 
+          height: 100vh;
+          background-repeat: repeat;
+          background-size: cover;
+        }
+        .note{
+  position: relative;
+  font-weight: 900;
+  font-size: 2em;
+  text-align: center;
+  color: white;
+}
+
+.note .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.note .letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0
+}
+
+.btngrp .button {
+  background-color: #ffffffc2;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
+  padding: 7px 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  font-family:monospace;
+  margin: 2px 2px;
+  transition: 0.5s; 
+  margin-top: 1%;
+  width: 70%;
+  
+}   
+.btngrp .button:not(:last-child) {
+          border-bottom: none; /* Prevent double borders */
+        }
+.btngrp .button:hover {
+  background-color: #a3f1ff;
+  color: rgb(0, 0, 0);
+}
+.btngrp .button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btngrp .button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btngrp .button:hover span {
+  padding-right: 2px;
+}
+
+.btngrp .button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    </style>
+
+
+
+</head>
+<body>
+ 
+    <h1 class="note">
+       <span class="letters">6th SEMESTER</span>
+        </span>
+      </h1>
+    
+
+      <div class="btngrp" align="center" >  
+        <button class="button" onclick="window.location.href = 'CNSindex.html';">Cryptography,Network Security and Cyber Law</button>
+        <button class="button" onclick="window.location.href = 'CGindex.html';">Computer Graphics And Visualization</button>
+        <button class="button" onclick="window.location.href = 'SSCindex.html';">System Software and Compiler Design</button>
+        <button class="button" onclick="window.location.href = 'OSindex.html';">Operating System</button>
+        <button class="button" onclick="window.location.href = 'DMDWindex.html';">Data Mining And Data Warehousing</button>
+        <button class="button" onclick="window.location.href = 'ORindex.html';">Operation Research</button>
+        <button class="button" onclick="window.location.href = 'MADindex.html';">Mobile Application Development</button>
+        <button class="button" onclick="window.location.href = 'PAindex.html';">Python Application Programming</button>
+        <button class="button" onclick="window.location.href = 'SSClabindex.html';">System Software And Operating System Lab</button>
+        <button class="button" onclick="window.location.href = 'CGlabindex.html';">Computer Graphics Lab</button>
+      </div>
+
+
+
+
+
+</body>
+<script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.note .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.note .letter',
+    rotateY: [-90, 0],
+    duration: 1300,
+    delay: (el, i) => 45 * i
+  }).add({
+    targets: '.note',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });</script>
+
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <title>MAD</title>
+</head>
+<style>
+        
+    body{
+      background: url("mobile2.jpg") no-repeat center center fixed; 
+      height: 100vh;
+      background-size: cover;
+     
+  }
+  .btngrp .button {
+    background-color: #000000c7;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  padding: 7px 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  font-family:monospace ;
+  margin: 2px 3px;
+  transition: 0.5s; 
+  margin-top: 1%;
+  width: 70%;
+}   
+.btngrp .button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+.btngrp .button:hover {
+background-color: #ffffffc7;
+color: rgb(0, 0, 0);
+}
+.btngrp .button span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.btngrp .button span:after {
+content: '\00bb';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.btngrp .button:hover span {
+padding-right: 2px;
+}
+
+.btngrp .button:hover span:after {
+opacity: 1;
+right: 0;
+}
+.btngrp{
+margin: auto;
+width: 70%;
+padding: 20px;
+
+
+}
+.note{
+position: relative;
+font-weight: 900;
+font-size: 2.3em;
+text-align: center;
+color: #000000;
+}
+
+.note .text-wrapper {
+position: relative;
+display: inline-block;
+padding-top: 0.1em;
+padding-right: 0.05em;
+padding-bottom: 0.1em;
+overflow: hidden;
+}
+
+.note .letter {
+display: inline-block;
+line-height: 1em;
+transform-origin: 0 0
+}
+
+
+ </style>
+<body>
+    <h1 class="note">
+        <span class="letters">Notes</span>
+         </span>
+       </h1>
+       <div class="btngrp" align="center" > 
+        <button class="button" onclick="window.location.href = 'Uploading.html';">Module 1</button>
+        <button class="button" onclick="window.location.href = 'Uploading.html';">Module 2 </button>
+        <button class="button" onclick="window.location.href = 'Uploading.html';">Module 3</button>
+        <button class="button" onclick="window.location.href = 'Uploading.html';">Module 4 </button>
+        <button class="button" onclick="window.location.href = 'Uploading.html';">Module 5 </button>
+       </div>
+</body>
+<script>
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.note .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    
+    anime.timeline({loop: true})
+      .add({
+        targets: '.note .letter',
+        rotateY: [-90, 0],
+        duration: 1300,
+        delay: (el, i) => 45 * i
+      }).add({
+        targets: '.note',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 9000
+      });</script>
+</html>

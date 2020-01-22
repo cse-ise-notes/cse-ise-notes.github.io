@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>  
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSE NOTES</title>
+    <style>
+    .note{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 80px,bold;
+        color: rgb(255, 255, 255);
+        margin-top: 2%;
+        display: block;
+      
+        }
+        body { 
+          background: url("bg.jpg") no-repeat center center fixed; 
+           height: 100vh;
+          
+           background-size: cover;
+       }
+.btngrp .button {
+  background-color: #000000c7;
+  border: 3px solid rgba(0, 0, 0, 0.26);
+  border-radius: 30px;
+  color: rgb(55, 10, 255);
+  padding: 12px 50px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 4px 2px;
+  transition: 0.5s; 
+  margin-top: 4%;
+
+}   
+.btngrp .button:not(:last-child) {
+          border-bottom: none; /* Prevent double borders */
+        }
+.btngrp .button:hover {
+  background-color: #fffefd;
+  color: rgb(0, 0, 0);
+}
+.btngrp .button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btngrp .button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btngrp .button:hover span {
+  padding-right: 25px;
+}
+
+.btngrp .button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.quote{
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  color: #fffefd;
+  margin-top: 12%;
+}
+ </style>
+</head>
+
+
+<body>   
+      <div class="note">
+      <center> <h1> CSE/ISE NOTES</h1></center> 
+      </div>
+
+ <div class="btngrp" align="center">  
+  <button class="button" onclick="window.location.href = '5sem.html';">5th Semester </button>
+  <button class="button" onclick="window.location.href = '6sem.html';"> 6th Semester</button>
+  <button class="button" onclick="window.location.href = 'Uploading.html';"> 7th Semester</button>
+  <button class="button" onclick="window.location.href = 'Uploading.html';"> 8th Semester</button>  </div>
+     
+
+  
+      <div class="quote">
+      <h1>"Knowledge Is A Tresure But Practice Is The Key" </h1>
+      </div>
+    
+  
+
+</body>
+<script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.quote');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.quote .letter',
+    scale: [4,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 950,
+    delay: (el, i) => 70*i
+  }).add({
+    targets: '.quote',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });</script>
+
+</html>
